@@ -1,0 +1,180 @@
+<html>
+	<head>
+		<title>JavaScript Numerical Logic</title>
+		<meta charset="utf-8">
+  
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">		
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		  
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		 <div class="container">
+			 <div class="jumbotron">
+				 <div class="row">
+					 <div class="col-sm-6">
+						<label for="fnumber">Enter first Number</label>
+						<input type="text" id="fnumber" ><br><br>
+						<label for="snumber">Enter Second Number</label>
+						<input type="text" id="snumber" ><br><br>				
+						<script> 				
+							function Multiply(){					
+								var fnumber=document.getElementById("fnumber").value;
+								var snumber=document.getElementById("snumber").value;							
+								document.getElementById("result1").innerHTML = "The Multiplication is = "+fnumber*snumber;	
+							}								
+							function Divide(){
+								var fnumber=document.getElementById("fnumber").value;
+								var snumber=document.getElementById("snumber").value;
+								document.getElementById("result2").innerHTML = "The division is = "+fnumber/snumber;
+							}	
+									
+						</script>
+						<input type="button" class="btn btn-success" value="Multiply" onclick="Multiply()">
+						<input type="button" class="btn btn-warning" value="Divide" onclick="Divide()">
+						<p id="result1"></p>
+						<p id="result2"></p>
+					</div>
+					<div class="col-sm-6">
+						<label>Armstrong Number :</label><br><br>
+						<label for="number">Enter the number : </label>
+						<input type="text" id="number"><br><br>
+						<script>
+							function ArmstrongNumber(){
+								let number=document.getElementById("number").value;
+								var temp,reminder,sum=0;
+								temp=number;
+								while(number>0)
+								{
+									reminder=number%10;
+									sum=sum+(reminder*reminder*reminder);
+									number=parseInt(number/10);
+									
+								}
+								if(temp==sum)
+								{
+									document.getElementById("result3").innerHTML="The Number "+number+" is armstrong number";
+								}
+								else
+								{
+									document.getElementById("result3").innerHTML="The number"+number+" is not armstrong number";	
+								}
+
+							}
+						</script>
+						<input type="button" class="btn btn-primary" value="Check" onclick="ArmstrongNumber()">
+						<p id="result3"></p>
+					</div>
+				</div>
+				<hr>
+				 <div class="row">
+					 <div class="col-sm-6">
+						 <label >Factorial : </label><br>
+						<label for="number1">Enter the number : </label>
+						<input type="text" id="number1"><br><br>
+						 <script>
+							 function Factorial(){
+								var number1=document.getElementById("number1").value;
+								var fact=1;
+								var i;
+								for(i=1;i<=number1;i++)
+								{
+								fact=fact*i;
+								}
+								document.getElementById("result4").innerHTML = "Factorial of  "+ number1 +"   is = "+fact;
+							}		
+						 </script>
+						 <input type="button" class="btn btn-info" value="Find" onclick="Factorial()">
+						 <p id="result4"></p>
+					 </div>
+					 <div class="col-sm-6">
+						<label>Number Palindrome:</label><br><br>
+						<label for="number2">Enter the number : </label>
+						<input type="text" id="number2"><br><br>
+						<script>
+							function palindrome(){
+								var number2=document.getElementById("number2").value;
+								var temp,reminder,reverse=0;
+								temp=number2;
+								while(number2>0)
+								{
+									reminder=number2%10;
+									number2=parseInt(number2/10);
+									reverse=reverse*10+reminder;
+								}
+								if(temp==reverse)
+								{
+									document.getElementById("result5").innerHTML="The Number "+number2+" is palindrome";
+								}
+								else
+								{
+									document.getElementById("result5").innerHTML="The number"+number2+" is not palindrome number";	
+								}
+
+							}
+						</script>
+						<input type="button" class="btn btn-danger" value="Check" onclick="palindrome()">
+						<p id="result5"></p>
+					</div>
+				 </div>
+				 <hr>
+				 <div class="row">
+					 <div class="col-sm-6">
+						<label>Number reverse</label><br><br>
+						<label for="number3">Enter the number : </label>
+						<input type="text" id="number3"><br><br>
+						<script>
+							function reverse(){
+								var number3=document.getElementById("number3").value;
+								var temp,reminder,reverse=0;
+								temp=number3;
+								while(number3>0)
+								{
+									reminder=number3%10;
+									number3=parseInt(number3/10);
+									reverse=reverse*10+reminder;
+								}
+								document.getElementById("result6").innerHTML=reverse;
+							}
+						</script>
+						<input type="button" class="btn btn-warning" value="find" onclick="reverse()"><br>
+						<p id="result6"></p>
+					</div>
+					<div class="col-sm-6">
+						<label>Prime Number</label><br><br>
+						<label for="number4">Enter the number : </label>
+						<input type="text" id="number4"><br><br>
+						<script>
+							function prime(){
+								var number4=document.getElementById("number4").value;
+								var i,flag=0;
+								if(number4 == 0 || number4 ==1)
+								{
+									document.getElementById("result7").innerHTML="Number is not Prime";
+								}
+								else{
+									for(i=2;i<=number4/2;i++)
+									{
+										if(number4%i==0){
+											document.getElementById("result7").innerHTML="Number is not Prime";
+											flag=1;
+											break;
+										}
+									}
+									if(flag==0)
+									{
+										document.getElementById("result7").innerHTML="Number is prime";
+									}
+								}
+								
+							}
+						</script>
+						<input type="button" class="btn btn-success" value="find" onclick="prime()"><br>
+						<p id="result7"></p>
+					</div>
+				 </div>
+			</div>
+		</div>
+	</body>
+
+</html>
